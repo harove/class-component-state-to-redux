@@ -8,7 +8,10 @@ import HalloWelt from './components/hallo-welt/HalloWelt';
 
 class App extends Component{
     render() {
-      return <HalloWelt tech= {store.getState().tech} />
+      return[
+        <HalloWelt tech= {store.getState().tech}/>,
+                 
+      ]; 
     }
     
 }
