@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
-
-
+import {createStore} from 'redux';
+import reducer from './reducers/index'
 import './App.css';
 import HalloWelt from './components/hallo-welt/HalloWelt';
 
-class App extends Component{
-    state = {
-      tech: 'React',
-    }
 
+const initialState = {tech: 'React'}
+const store = createStore(reducer,initialState);
+
+class App extends Component{
     render() {
-      return <HalloWelt tech= {this.state.tech} />
+      return <HalloWelt tech= {store.getState().tech} />
     }
     
 }
