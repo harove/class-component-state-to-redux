@@ -10,7 +10,6 @@ import './HalloWelt.css';
 class HalloWelt extends Component {
     render() {
         const {tech} = this.props
-        
         return (
             <div className="hallo-welt"> {`Hallo ${tech}!`}</div>
         );
