@@ -3,16 +3,19 @@ import {store} from './store'
 import './App.css';
 import HalloWelt from './components/hallo-welt/HalloWelt';
 import ButtonGroup from './components/button-group/ButtonGroup';
-
-
-
-
+import {render} from './index';
 
 class App extends Component{
+  
+    constructor(){
+      super();
+      store.subscribe(render);
+    }
+
     render() {
       return[
-        <HalloWelt tech= {store.getState().tech}/>,
-        <ButtonGroup techs = {store.getState().techs} />
+        <HalloWelt key = {1} tech= {store.getState().tech}/>,
+        <ButtonGroup key = {2} techs = {store.getState().techs} />
       ]; 
     }
     
